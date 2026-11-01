@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4f1e7">
+<title>AXEZEN — Your Digital Playground</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{--bg:#f4f1e7;--paper:#fffdf5;--ink:#11120f;--muted:#77776e;--lime:#d9ff26}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}button,input,textarea{font:inherit}button{cursor:pointer;color:inherit}.shell{max-width:1500px;margin:auto;min-height:100vh;display:flex}.sidebar{width:230px;background:var(--paper);border-right:2px solid var(--ink);padding:25px 18px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;gap:10px;align-items:center;font-weight:900;font-size:21px;margin-bottom:48px}.mark{width:43px;height:43px;background:var(--lime);border:2px solid var(--ink);box-shadow:3px 3px var(--ink);display:grid;place-items:center;font:900 30px 'Barlow Condensed';transform:rotate(-5deg)}.brand small{display:block;font-size:8px;letter-spacing:1px}.label{font-size:9px;letter-spacing:1.5px;color:var(--muted);font-weight:900;margin:0 0 10px 9px}.nav{display:block;width:100%;text-align:left;padding:12px;border:0;background:none;border-radius:8px;font-weight:700;margin-bottom:4px}.nav.active,.nav:hover{background:var(--lime);outline:1px solid var(--ink)}.nav span{margin-left:10px}.user{margin-top:auto;border-top:1px solid #ddd;padding-top:18px;font-size:10px}.user small{display:block;color:var(--muted);margin-top:4px}.main{flex:1;min-width:0;padding:0 38px 50px}.top{height:70px;border-bottom:1px solid #d3d0c5;display:flex;align-items:center;font-size:9px;letter-spacing:1.5px;font-weight:900;color:var(--muted)}.top button{margin-left:auto}.page{display:none;padding-top:32px}.page.active{display:block}.hero{background:#171812;color:#fffdf5;border:2px solid #111;border-radius:14px;box-shadow:4px 4px #111;padding:40px;display:grid;grid-template-columns:1.2fr .8fr;min-height:340px;overflow:hidden}.eyebrow{font-size:9px;letter-spacing:2px;font-weight:900;color:#858579}.hero .eyebrow{color:var(--lime)}h1,h2,p{margin-top:0}.hero h1,.title h1{font:900 clamp(44px,6vw,72px)/.88 'Barlow Condensed';margin:17px 0;letter-spacing:-1px}.hero h1 em{color:var(--lime);font-style:normal}.hero p,.title p{font-size:12px;line-height:1.7;color:#c7c6bc;max-width:360px}.btn{border:2px solid #111;background:var(--lime);padding:13px 16px;font-size:10px;font-weight:900;box-shadow:3px 3px var(--lime)}.art{display:grid;place-items:center;position:relative}.artbox{height:230px;width:185px;background:#c7d9ff;border:3px solid #080808;box-shadow:8px 8px var(--lime);transform:rotate(7deg);padding:15px;color:#111;font:900 30px/.9 'Barlow Condensed';display:flex;flex-direction:column;justify-content:space-between}.orb{height:100px;width:100px;border:3px solid #111;border-radius:50%;background:linear-gradient(135deg,#e4f1ff,#6177ad);display:grid;place-items:center;align-self:center;font-size:55px}.burst{position:absolute;right:3%;top:0;color:var(--lime);font-size:70px}.section{display:flex;justify-content:space-between;align-items:end;margin:40px 0 17px}.section h2{font:800 27px 'Barlow Condensed';margin:4px 0}.textbtn{border:0;background:none;font-size:9px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.tile{min-height:125px;border:2px solid #111;border-radius:11px;box-shadow:3px 3px #111;text-align:left;padding:15px;display:flex;flex-direction:column;align-items:flex-start}.tile i{font-style:normal;font-size:24px;margin-bottom:10px}.tile b{font:800 20px 'Barlow Condensed'}.tile small{font-size:9px;margin-top:3px}.red{background:#ff7773}.purple{background:#b88bff}.blue{background:#7bc5ff}.pink{background:#ff78c8}.orange{background:#ffad5b}.green{background:#a5ef68}.notice{border:1px dashed #aaa;padding:14px;border-radius:9px;margin-top:23px;font-size:10px}.title{margin:15px 0 25px}.title h1{color:var(--ink);font-size:58px;margin:10px 0}.title h1 span{color:#a7ca00}.title p{color:var(--muted)}.search{display:flex;gap:10px;align-items:center;background:var(--paper);border:1.5px solid #111;padding:12px;border-radius:9px;box-shadow:3px 3px #111}.search input{border:0;background:none;outline:0;flex:1;min-width:0;font-size:12px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.chip{border:1px solid #111;border-radius:20px;background:transparent;padding:7px 12px;font-size:9px;font-weight:900}.chip.active{background:var(--lime)}.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tool{display:flex;gap:12px;align-items:center;background:var(--paper);border:1.5px solid #111;border-radius:10px;padding:13px;box-shadow:2px 2px #111}.toolicon{width:42px;height:42px;border:1px solid #111;border-radius:8px;display:grid;place-items:center;font-size:21px;flex-shrink:0}.toolinfo{flex:1;min-width:0}.toolinfo b{display:block;font:800 18px 'Barlow Condensed'}.toolinfo small{font-size:9px;color:var(--muted)}.tool button{border:1px solid #111;background:var(--lime);border-radius:6px;width:30px;height:30px;font-weight:900}.workspace,.panel,.settings,.profile,.about{background:var(--paper);border:1.5px solid #111;border-radius:11px;box-shadow:3px 3px #111;padding:20px}.back{border:0;background:none;font-size:9px;font-weight:900;margin-bottom:20px}.field{width:100%;padding:13px;border:1.5px solid #111;border-radius:8px;background:var(--bg);font-size:12px}.action{border:1.5px solid #111;background:var(--lime);padding:10px 14px;border-radius:7px;font-size:10px;font-weight:900;margin:10px 5px 0 0}.help{font-size:10px;color:var(--muted);line-height:1.6;margin-top:12px}.upload{border:1px dashed #888;padding:22px;text-align:center;margin-top:12px;border-radius:9px;font-size:11px}.preview{display:block;max-width:100%;max-height:300px;margin:15px auto}.row{display:flex;justify-content:space-between;border-top:1px solid #ddd;padding:13px 0;font-size:11px}.row small{color:var(--muted)}.empty{text-align:center;color:var(--muted);padding:30px;font-size:12px}.profile,.about{text-align:center;max-width:500px;margin:auto}.bigavatar{width:75px;height:75px;border-radius:50%;background:#c7d9ff;border:2px solid #111;display:grid;place-items:center;margin:0 auto 15px;font:900 48px 'Barlow Condensed'}.stats{display:flex;justify-content:space-around;border-top:1px solid #ddd;padding-top:18px;margin-top:20px}.stats b{display:block;font:900 24px 'Barlow Condensed'}.stats small{font-size:8px;color:var(--muted)}.settings button{width:100%;padding:16px;text-align:left;border:0;border-bottom:1px solid #ddd;background:none;font-size:12px}.settings small{display:block;color:var(--muted);margin-top:4px}.about h1{font:900 55px 'Barlow Condensed';margin:15px}.about p{font-size:10px;color:var(--muted)}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#171812;color:white;padding:12px 18px;border-radius:8px;font-size:11px;opacity:0;transition:.2s}.toast.show{opacity:1}.mobilemenu,.bottom{display:none}
+@media(max-width:800px){.sidebar{width:195px}.main{padding:0 22px 40px}}
+@media(max-width:620px){.shell{display:block}.sidebar{position:fixed;z-index:5;left:-250px;top:0;bottom:0;width:235px;transition:.2s;box-shadow:5px 0 20px #0002}.sidebar.open{left:0}.main{padding:0 14px 85px}.top{height:58px}.mobilemenu{display:block;margin-right:12px;border:1px solid #111;background:var(--paper);border-radius:7px;padding:7px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.hero{grid-template-columns:1fr;padding:27px 22px}.hero h1{font-size:54px}.art{height:225px}.tools{grid-template-columns:1fr}.bottom{display:flex;position:fixed;z-index:4;bottom:0;left:0;right:0;background:var(--paper);border-top:1.5px solid #111;height:62px;justify-content:space-around}.bottom button{border:0;background:none;font-size:19px;display:flex;flex-direction:column;align-items:center;justify-content:center}.bottom small{font-size:8px;font-weight:700}.bottom button.active{color:#789000}.title h1{font-size:50px}}
+
+.dl-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.dl-actions{display:flex;gap:7px;flex-wrap:wrap}.dl-progress{margin-top:18px;padding:13px;background:var(--bg);border:1px solid #111;border-radius:9px}.dl-progress-head{display:flex;justify-content:space-between;font-size:10px;margin-bottom:9px}.dl-track{height:10px;background:#ddd;border:1px solid #111;border-radius:20px;overflow:hidden}.dl-track div{height:100%;width:0;background:var(--lime);transition:width .15s}.dl-result{margin-top:14px;padding:13px;border:1px dashed #999;border-radius:9px;font-size:11px;line-height:1.6;overflow-wrap:anywhere}.dl-result a{color:#536d00;font-weight:800}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="mark">A</div><div>AXEZEN<small>YOUR DIGITAL PLAYGROUND</small></div></div>
+ <div class="label">MENU</div>
+ <button class="nav active" data-page="home">⌂ <span>Home</span></button>
+ <button class="nav" data-page="explore">⌕ <span>Explore</span></button>
+ <button class="nav" data-page="history">◷ <span>History</span></button>
+ <button class="nav" data-page="favorites">♡ <span>Favorites</span></button>
+ <div class="label" style="margin-top:25px">PREFERENCES</div>
+ <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+ <button class="nav" data-page="about">ⓘ <span>About AXEZEN</span></button>
+ <div class="user"><b>AXEZEN USER</b><small>Free account</small></div>
+</aside>
+<main class="main">
+<header class="top"><button class="mobilemenu" id="menu">☰</button><span id="crumb">AXEZEN / HOME</span><button class="nav" id="theme">◐ THEME</button></header>
+<section class="page active" id="home">
+ <div class="hero"><div><div class="eyebrow">✦ BUILT FOR CREATIVITY</div><h1>MAKE YOUR<br><em>OWN</em> PLAYGROUND.</h1><p>One place for your everyday creative tools. Simple, fast, and made to explore.</p><button class="btn" data-page="explore">EXPLORE TOOLS ↗</button></div><div class="art"><div class="burst">✳</div><div class="artbox">CREATE<br>WITHOUT<br>LIMITS.<div class="orb">A</div><small>AXEZEN / 001</small></div></div></div>
+ <div class="section"><div><div class="eyebrow">PICK YOUR TOOL</div><h2>Explore categories</h2></div><button class="textbtn" data-page="explore">VIEW ALL ↗</button></div>
+ <div class="grid">
+ <button class="tile red" data-tool="downloader"><i>↧</i><b>Downloader</b><small>Link & media helper</small></button>
+ <button class="tile purple" data-tool="image"><i>▧</i><b>Image Tools</b><small>Resize local images</small></button>
+ <button class="tile blue" data-tool="video"><i>▶</i><b>Video Tools</b><small>Preview local videos</small></button>
+ <button class="tile pink" data-tool="audio"><i>♫</i><b>Music Tools</b><small>Preview local audio</small></button>
+ <button class="tile orange" data-tool="utilities"><i>⚙</i><b>Utilities</b><small>Text & URL helpers</small></button>
+ <button class="tile green" data-tool="files"><i>▣</i><b>My Files</b><small>View local file details</small></button>
+ </div><div class="notice">✦ <b> Made for your creativity.</b> Use content you own or have permission to use.</div>
+</section>
+<section class="page" id="explore"><div class="title"><div class="eyebrow">DISCOVER SOMETHING NEW</div><h1>Explore tools<span>.</span></h1><p>Find the right tool for your next idea.</p></div><div class="search">⌕ <input id="search" placeholder="Search tools..."></div><div class="chips" id="filters"><button class="chip active" data-filter="all">ALL</button><button class="chip" data-filter="media">MEDIA</button><button class="chip" data-filter="image">IMAGE</button><button class="chip" data-filter="video">VIDEO</button><button class="chip" data-filter="audio">AUDIO</button><button class="chip" data-filter="utility">UTILITIES</button></div><div class="tools" id="toolList"></div></section>
+<section class="page" id="toolpage"><button class="back" data-page="explore">← BACK TO EXPLORE</button><div class="title"><div class="eyebrow" id="toolTag">AXEZEN TOOLKIT</div><h1 id="toolName">Tool<span>.</span></h1><p id="toolDesc"></p></div><div class="workspace" id="workspace"></div></section>
+<section class="page" id="history"><div class="title"><div class="eyebrow">YOUR ACTIVITY</div><h1>History<span>.</span></h1><p>Recent tools opened in this browser.</p></div><div class="panel"><button class="textbtn" id="clear">CLEAR HISTORY</button><div id="historyList"></div></div></section>
+<section class="page" id="favorites"><div class="title"><div class="eyebrow">SAVED FOR LATER</div><h1>Favorites<span>.</span></h1></div><div class="tools" id="favList"></div></section>
+<section class="page" id="profile"><div class="title"><div class="eyebrow">YOUR SPACE</div><h1>Profile<span>.</span></h1></div><div class="profile"><div class="bigavatar">A</div><h2>AXEZEN USER</h2><p>Welcome to your digital playground.</p><div class="stats"><div><b id="count">0</b><small>TOOLS OPENED</small></div><div><b id="saved">0</b><small>FAVORITES</small></div><div><b>FREE</b><small>MEMBERSHIP</small></div></div></div></section>
+<section class="page" id="settings"><div class="title"><div class="eyebrow">MAKE IT YOURS</div><h1>Settings<span>.</span></h1></div><div class="settings"><button id="theme2">◐ &nbsp; Appearance<small>Switch light and dark theme</small></button><button id="clear2">⌫ &nbsp; Clear activity<small>Remove local history</small></button><button data-page="about">ⓘ &nbsp; About AXEZEN<small>Version 1.0.0</small></button></div></section>
+<section class="page" id="about"><div class="about"><div class="mark" style="margin:auto;width:70px;height:70px;font-size:50px">A</div><h1>AXEZEN</h1><div class="eyebrow">BUILT DIFFERENT.</div><hr><b>VERSION 1.0.0</b><p>Smart tools. Bigger possibilities.<br>Made with ♥ for everyone.</p></div></section>
+</main>
+</div>
+<nav class="bottom"><button data-page="home">⌂<small>Home</small></button><button data-page="explore">⌕<small>Explore</small></button><button data-page="history">◷<small>History</small></button><button data-page="profile">♙<small>Profile</small></button></nav>
+<div class="toast" id="toast"></div>
+<script>
+const tools=[
+{id:"downloader",name:"Link & Media Helper",desc:"Check URL formatting for links.",icon:"↧",color:"#ff7773",cat:"media"},
+{id:"image",name:"Image Resizer",desc:"Resize an image on your device.",icon:"▧",color:"#b88bff",cat:"image"},
+{id:"video",name:"Video Preview",desc:"Preview a local video file.",icon:"▶",color:"#7bc5ff",cat:"video"},
+{id:"audio",name:"Audio Preview",desc:"Listen to a local audio file.",icon:"♫",color:"#ff78c8",cat:"audio"},
+{id:"utilities",name:"Text & URL Utility",desc:"Count words and check URL format.",icon:"⚙",color:"#ffad5b",cat:"utility"},
+{id:"files",name:"Local File Viewer",desc:"View details of a local file.",icon:"▣",color:"#a5ef68",cat:"media"}];
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let hist=JSON.parse(localStorage.axezHist||"[]"),favs=JSON.parse(localStorage.axezFavs||"[]"),filter="all";
+function toast(s){let t=$("#toast");t.textContent=s;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2000)}
+function go(p){$$(".page").forEach(x=>x.classList.remove("active"));$("#"+(p==="tool"?"toolpage":p)).classList.add("active");$$("[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===p));$("#crumb").textContent="AXEZEN / "+p.toUpperCase();$("#sidebar").classList.remove("open");if(p==="history")drawHistory();if(p==="favorites")drawFav();if(p==="profile"){$("#count").textContent=hist.length;$("#saved").textContent=favs.length}window.scrollTo(0,0)}
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function card(t){return `<div class="tool"><div class="toolicon" style="background:${t.color}">${t.icon}</div><div class="toolinfo"><b>${t.name}</b><small>${t.desc}</small></div><button data-fav="${t.id}">${favs.includes(t.id)?"★":"☆"}</button><button data-open="${t.id}">↗</button></div>`}
+function drawTools(){let q=$("#search").value.toLowerCase();$("#toolList").innerHTML=tools.filter(t=>(filter==="all"||t.cat===filter)&&(`${t.name} ${t.desc}`).toLowerCase().includes(q)).map(card).join("")||'<div class="empty">No tools found.</div>'}
+function drawHistory(){$("#historyList").innerHTML=hist.map(x=>`<div class="row"><b>${safe(x.n)}</b><small>${safe(x.d)}</small></div>`).join("")||'<div class="empty">No activity yet.</div>'}
+function drawFav(){$("#favList").innerHTML=tools.filter(t=>favs.includes(t.id)).map(card).join("")||'<div class="empty">No favorites yet. Tap ☆ beside a tool.</div>'}
+function openTool(id){let t=tools.find(x=>x.id===id);hist.unshift({n:t.name,d:new Date().toLocaleString("id-ID")});hist=hist.slice(0,40);localStorage.axezHist=JSON.stringify(hist);$("#toolTag").textContent="AXEZEN TOOLKIT";$("#toolName").innerHTML=safe(t.name)+'<span>.</span>';$("#toolDesc").textContent=t.desc;let h="";
+if(id==="downloader")h=`<b class="eyebrow">AXEZEN SMART DOWNLOADER</b>
+<div class="dl-tabs" id="dlTabs">
+  <button class="chip active" data-dlmode="direct">DIRECT URL</button>
+  <button class="chip" data-dlmode="drive">GOOGLE DRIVE</button>
+  <button class="chip" data-dlmode="social">SOCIAL MEDIA API</button>
+</div>
+<label class="help" for="dlPlatform">SOURCE PLATFORM</label>
+<select class="field" id="dlPlatform">
+  <option value="auto">Auto detect / Direct URL</option><option value="tiktok">TikTok</option>
+  <option value="instagram">Instagram</option><option value="youtube">YouTube</option>
+  <option value="facebook">Facebook</option><option value="x">X (Twitter)</option>
+  <option value="drive">Google Drive</option><option value="other">Other media</option>
+</select>
+<p><input class="field" id="dlUrl" type="url" placeholder="Paste your direct media or share link"></p>
+<div id="apiConfig" style="display:none">
+  <label class="help" for="dlApi">YOUR BACKEND API ENDPOINT (isi setelah server online)</label>
+  <input class="field" id="dlApi" type="url" placeholder="https://your-domain.com/api/download">
+  <p class="help">API backend milikmu harus menerima POST JSON {url, platform} dan mengembalikan JSON {downloadUrl, filename}. Simpan token rahasia di server, bukan di HTML.</p>
+</div>
+<div class="dl-actions">
+  <button class="action" id="dlStart">⬇ START DOWNLOAD</button>
+  <button class="action" id="dlReset">RESET</button>
+</div>
+<div class="dl-progress" id="dlProgress" style="display:none"><div class="dl-progress-head"><b id="dlStatus">Preparing…</b><span id="dlPercent">0%</span></div><div class="dl-track"><div id="dlBar"></div></div></div>
+<div class="dl-result" id="dlResult" aria-live="polite">Pilih sumber, tempel link, lalu tekan START DOWNLOAD.</div>
+<p class="help">Gunakan hanya file milikmu atau yang kamu punya izin untuk mengunduh. Ketersediaan unduhan platform sosial mengikuti API resmi dan hak akses akun.</p>`;
+if(id==="image")h=`<b class="eyebrow">RESIZE IMAGE</b><div class="upload"><input type="file" id="img" accept="image/*"></div><div id="imgout"></div>`;
+if(id==="video")h=`<b class="eyebrow">LOCAL VIDEO PREVIEW</b><div class="upload"><input type="file" id="vid" accept="video/*"></div><div id="vidout"></div><p class="help">The selected file stays in your browser.</p>`;
+if(id==="audio")h=`<b class="eyebrow">LOCAL AUDIO PREVIEW</b><div class="upload"><input type="file" id="aud" accept="audio/*"></div><div id="audout"></div>`;
+if(id==="utilities")h=`<b class="eyebrow">TEXT COUNTER</b><textarea class="field" id="txt" rows="5" placeholder="Type text..."></textarea><p class="help" id="words">0 characters · 0 words</p><button class="action" id="copy">COPY</button><button class="action" id="empty">CLEAR</button><hr><b class="eyebrow">URL CHECKER</b><input class="field" id="url" placeholder="https://example.com"><button class="action" id="urlcheck">CHECK URL</button><p id="urlresult" class="help"></p>`;
+if(id==="files")h=`<b class="eyebrow">LOCAL FILE DETAILS</b><div class="upload"><input type="file" id="file"></div><p id="details" class="help">Choose a file to view details.</p>`;
+$("#workspace").innerHTML=h;go("tool");
+if(id==="downloader"){
+  let dlMode="direct";
+  const tabs=$("#dlTabs");
+  const result=$("#dlResult");
+  const apiInput=$("#dlApi");
+  apiInput.value=localStorage.axezDlApi||"";
+  function setMode(mode){
+    dlMode=mode;
+    $$("#dlTabs [data-dlmode]").forEach(b=>b.classList.toggle("active",b.dataset.dlmode===mode));
+    $("#apiConfig").style.display="block";
+    $("#dlPlatform").value=mode==="drive"?"drive":(mode==="social"?"tiktok":"auto");
+    $("#dlUrl").placeholder=mode==="drive"?"Paste Google Drive share link":mode==="social"?"Paste social media post URL":"Paste direct file URL (https://...)";
+    result.textContent=mode==="social"?"Social media membutuhkan backend API yang sah. Masukkan endpoint backend milikmu.":"Tempel URL file yang dapat diakses publik.";
+  }
+  tabs.onclick=e=>{let b=e.target.closest("[data-dlmode]");if(b)setMode(b.dataset.dlmode)};
+  apiInput.onchange=()=>{localStorage.axezDlApi=apiInput.value.trim()};
+  $("#dlReset").onclick=()=>{$("#dlUrl").value="";$("#dlProgress").style.display="none";result.textContent="Form direset."};
+  function setProgress(n,label){$("#dlProgress").style.display="block";$("#dlBar").style.width=n+"%";$("#dlPercent").textContent=n+"%";$("#dlStatus").textContent=label}
+  function driveDownloadUrl(raw){
+    let u=new URL(raw), id="";
+    if(u.hostname==="drive.google.com"){
+      let m=u.pathname.match(/\/file\/d\/([^/]+)/); id=m?m[1]:u.searchParams.get("id");
+    } else if(u.hostname==="docs.google.com"){
+      let m=u.pathname.match(/\/document\/d\/([^/]+)/); id=m?m[1]:"";
+    }
+    if(!id)throw new Error("ID Google Drive tidak ditemukan. Pastikan link berbagi benar.");
+    return "https://drive.google.com/uc?export=download&id="+encodeURIComponent(id);
+  }
+  function saveHistory(url,name){
+    hist.unshift({n:"Downloaded: "+name,d:new Date().toLocaleString("id-ID")});
+    hist=hist.slice(0,40);localStorage.axezHist=JSON.stringify(hist);
+  }
+  async function downloadDirect(url, filename){
+    setProgress(5,"Checking URL…");
+    let response;
+    try{
+      response=await fetch(url,{mode:"cors"});
+    }catch(err){
+      setProgress(0,"Browser blocked direct fetch");
+      result.innerHTML="Server menolak akses lintas-domain (CORS) atau URL tidak bisa dibaca browser. <a href='"+safe(url)+"' target='_blank' rel='noopener'>Buka URL sumber</a> untuk mengunduh langsung. Untuk progress di AXEZEN, host file harus mengizinkan CORS.";
+      return;
+    }
+    if(!response.ok)throw new Error("Server merespons HTTP "+response.status);
+    const total=Number(response.headers.get("content-length"))||0;
+    const disp=response.headers.get("content-disposition")||"";
+    let suggested=filename||((disp.match(/filename\*?=(?:UTF-8''|\")?([^;"]+)/i)||[])[1]||"ax ez en-download").replace(/['"]/g,"").trim();
+    const chunks=[];let loaded=0;
+    if(response.body&&response.body.getReader){
+      const reader=response.body.getReader();
+      while(true){const part=await reader.read();if(part.done)break;chunks.push(part.value);loaded+=part.value.length;setProgress(total?Math.min(99,Math.round(loaded/total*100)):Math.min(95,Math.round(loaded/(loaded+500000)*100)),"Downloading…");}
+    }else{chunks.push(new Uint8Array(await response.arrayBuffer()));loaded=chunks[0].length;}
+    const blob=new Blob(chunks,{type:response.headers.get("content-type")||"application/octet-stream"});
+    const a=document.createElement("a"),objectUrl=URL.createObjectURL(blob);
+    a.href=objectUrl;a.download=suggested;a.style.display="none";document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(objectUrl),30000);
+    setProgress(100,"Download ready");result.textContent="File siap disimpan · "+suggested+" · "+(loaded/1024/1024).toFixed(2)+" MB";
+    saveHistory(url,suggested);toast("Download started");
+  }
+  $("#dlStart").onclick=async()=>{
+    const raw=$("#dlUrl").value.trim(),platform=$("#dlPlatform").value;
+    if(!raw){result.textContent="Masukkan URL terlebih dahulu.";return;}
+    let parsed;try{parsed=new URL(raw);if(!["http:","https:"].includes(parsed.protocol))throw 0;}catch{result.textContent="URL tidak valid. Gunakan alamat http:// atau https://";return;}
+    $("#dlStart").disabled=true;result.textContent="Memproses link…";
+    try{
+      if(dlMode==="social"){
+        const endpoint=apiInput.value.trim();
+        if(!endpoint){throw new Error("Masukkan endpoint backend API milikmu terlebih dahulu.");}
+        let apiUrl;try{apiUrl=new URL(endpoint)}catch{throw new Error("Endpoint API tidak valid.");}
+        if(apiUrl.protocol!=="https:"&&apiUrl.hostname!=="localhost")throw new Error("Endpoint API harus menggunakan HTTPS.");
+        setProgress(10,"Contacting your API…");
+        const res=await fetch(apiUrl.href,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:raw,platform})});
+        if(!res.ok)throw new Error("API error HTTP "+res.status);
+        const data=await res.json();
+        if(!data.downloadUrl)throw new Error("Respons API tidak memiliki downloadUrl.");
+        const downloadUrl=new URL(data.downloadUrl);
+        if(!["https:","http:"].includes(downloadUrl.protocol))throw new Error("downloadUrl API tidak aman.");
+        await downloadDirect(downloadUrl.href,data.filename||"ax ezen-media");
+      }else{
+        const finalUrl=dlMode==="drive"||platform==="drive"?driveDownloadUrl(raw):raw;
+        await downloadDirect(finalUrl);
+      }
+    }catch(err){setProgress(0,"Download failed");result.textContent="Gagal: "+(err.message||"Tidak dapat mengunduh file.")+" Pastikan link dapat diakses dan API/server dikonfigurasi dengan benar.";}
+    finally{$("#dlStart").disabled=false;}
+  };
+  setMode("direct");
+}
+if(id==="image")$("#img").onchange=e=>{let f=e.target.files[0];if(!f)return;let u=URL.createObjectURL(f);$("#imgout").innerHTML=`<img class="preview" id="imprev" src="${u}"><p class="help">${safe(f.name)}</p><input class="field" id="width" type="number" value="800" min="1" max="6000"><button class="action" id="resize">RESIZE & SAVE</button>`;$("#resize").onclick=()=>{let im=$("#imprev"),w=Math.min(6000,Math.max(1,+$("#width").value||800)),h=Math.round(im.naturalHeight*w/im.naturalWidth),c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(im,0,0,w,h);c.toBlob(b=>{let a=document.createElement("a"),v=URL.createObjectURL(b);a.href=v;a.download="ax ezen-resized.png".replace(" ","");a.click();URL.revokeObjectURL(v);toast("Image saved")})}};
+if(id==="video")$("#vid").onchange=e=>{let f=e.target.files[0];if(f)$("#vidout").innerHTML=`<video class="preview" controls src="${URL.createObjectURL(f)}"></video><p class="help">${safe(f.name)}</p>`};
+if(id==="audio")$("#aud").onchange=e=>{let f=e.target.files[0];if(f)$("#audout").innerHTML=`<audio controls style="width:100%;margin-top:15px" src="${URL.createObjectURL(f)}"></audio><p class="help">${safe(f.name)}</p>`};
+if(id==="utilities"){$("#txt").oninput=()=>{let v=$("#txt").value;$("#words").textContent=`${v.length} characters · ${v.trim()?v.trim().split(/\s+/).length:0} words`};$("#copy").onclick=async()=>{await navigator.clipboard.writeText($("#txt").value);toast("Copied")};$("#empty").onclick=()=>{$("#txt").value="";$("#words").textContent="0 characters · 0 words"};$("#urlcheck").onclick=()=>{try{let u=new URL($("#url").value);$("#urlresult").textContent=["http:","https:"].includes(u.protocol)?"Valid URL · "+u.hostname:"Use http or https"}catch{$("#urlresult").textContent="Enter a valid URL including https://"}}}
+if(id==="files")$("#file").onchange=e=>{let f=e.target.files[0];if(f)$("#details").textContent=`${f.name} · ${f.type||"Unknown type"} · ${(f.size/1024).toFixed(1)} KB`};
+}
+document.addEventListener("click",e=>{let p=e.target.closest("[data-page]");if(p){e.preventDefault();go(p.dataset.page)}let o=e.target.closest("[data-open]");if(o)openTool(o.dataset.open);let f=e.target.closest("[data-fav]");if(f){let id=f.dataset.fav;favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];localStorage.axezFavs=JSON.stringify(favs);drawTools();drawFav();toast("Favorites updated")}let t=e.target.closest("[data-tool]");if(t)openTool(t.dataset.tool)});
+$("#search").oninput=drawTools;$("#filters").onclick=e=>{let b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;$$(".chip").forEach(x=>x.classList.toggle("active",x===b));drawTools()};
+function theme(){document.body.classList.toggle("dark");toast("Theme switched")}
+$("#theme").onclick=theme;$("#theme2").onclick=theme;$("#menu").onclick=()=>$("#sidebar").classList.toggle("open");$("#clear").onclick=()=>{hist=[];localStorage.axezHist="[]";drawHistory();toast("History cleared")};$("#clear2").onclick=()=>{hist=[];localStorage.axezHist="[]";toast("History cleared")};
+drawTools();
+</script>
+</body>
+</html>
